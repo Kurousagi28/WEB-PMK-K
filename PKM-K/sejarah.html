@@ -1,0 +1,220 @@
+<html lang="id">
+   <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sejarah Sasirangan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: #e7c24a; color: #fff; }
+
+
+header {
+position: fixed;
+top: 0; left: 0; width: 100%;
+background: rgba(0,0,0,.35);
+padding: 14px 24px;
+display: flex;
+justify-content: space-between;
+z-index: 10;
+}
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 260px;
+      height: 100vh;
+      background: #cfe3d3;
+      padding: 80px 24px;
+      transition: 0.4s ease;
+      z-index: 999;
+    }
+
+    .sidebar.active { right: 0; }
+
+    .sidebar a {
+      display: block;
+      margin-bottom: 16px;
+      color: #2f6b4f;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+      z-index: 998;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    header h1 { font-size: 20px; font-weight: 700; }
+    header .menu { font-size: 24px; cursor: pointer; }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.6)),
+      url('sasirangan1.jpeg') center/cover no-repeat;
+      padding: 100px 28px 140px;
+    }
+
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffd966;
+      margin-bottom: 16px;
+    }
+
+
+    .hero p {
+      font-size: 25px;
+      line-height: 1.8;
+      max-width: 820px;
+      color: #fff;
+    }
+
+
+    /* Animasi Teks Masuk dari Kiri */
+    @keyframes slideInFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Animasi Teks Masuk dari Kanan */
+    @keyframes slideInFromRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero h2 {
+      animation: slideInFromLeft 0.8s ease-out;
+    }
+
+    .hero p {
+      animation: slideInFromRight 0.8s ease-out 0.2s backwards;
+    }
+
+    .source {
+      position: fixed;
+      top: 100px;
+      right: 28px;
+      font-size: 13px;
+      color: #fff;
+      z-index: 10;
+    }
+
+    .ornament {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background: radial-gradient(circle at 50% 0, #fff 60%, transparent 61%) repeat-x;
+      background-size: 90px 90px;
+    }
+
+
+    footer {
+      background: #c6b093;
+      color: #2f2f2f;
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+
+    @media(max-width:600px){
+      .hero h2 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <h1>SEJARAH</h1> 
+  <div class = menu id="menuBtn">☰</div>
+</header>
+<div class="sidebar" id="sidebar">
+  <a href="index.html">HOMEPAGE</a>
+  <a href="sejarah.html">SEJARAH SASIRANGAN</a>
+  <a href="filosofi.html">FILOSOFI</a>
+  <a href="irispudak.html">MOTIF 1</a>
+  <a href="bayamraja.html">MOTIF 2</a>
+  <a href="kembangkacang.html">MOTIF 3</a>
+  <a href="gigiharuan.html">MOTIF 4</a>
+  <a href="motif5.html">MOTIF 5</a>
+  <a href="motif6.html">MOTIF 6</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<section class="hero">
+  <div class="source">Sumber gambar : google image</div>
+  <h2>Sasirangan</h2>
+  <p>
+    Sasirangan adalah kain tradisional yang berasal dari Kalimantan Selatan yang telah ditetapkan oleh
+    Kementerian Pendidikan dan Kebudayaan sebagai salah satu dari 33 kain tradisional warisan budaya
+    tak benda di Indonesia. Sasirangan berasal dari kata <em>sirang</em> atau <em>manyirang</em> yang dalam
+    bahasa Banjar berarti menjelujur atau teknik menjahit menggunakan tangan.
+    <br><br>
+    Awalnya, kain sasirangan diyakini dapat mengobati penyakit dan mengusir roh jahat sehingga
+    pembuatannya dibatasi. Namun sekarang, produksi kain sasirangan telah berkembang untuk kebutuhan
+    sandang dan penampilan modern, tanpa meninggalkan cara pembuatan tradisional.
+    <br><br>
+    Sejak tahun 2010, tradisi sasirangan secara resmi diakui sebagai Warisan Budaya Tak Benda
+    Indonesia dalam bidang keterampilan dan kemahiran kerajinan tradisional.
+  </p>
+  <div class="ornament"></div>
+</section>
+
+
+<footer>
+  © 2026 BASIR Banua • Kalimantan Selatan
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+
+  menuBtn.onclick = () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+  };
+
+  overlay.onclick = () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  };
+</script>
+
+
+</body>
+</html>
+
+
+</html>
+
+
+

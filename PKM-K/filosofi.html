@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filosofi Motif Sasirangan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f3e2b3;
+  overflow-x: hidden;
+}
+header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(198, 220, 201, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      z-index: 1000;
+    }
+.sidebar {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 260px;
+      height: 100vh;
+      background: #cfe3d3;
+      padding: 80px 24px;
+      transition: 0.4s ease;
+      z-index: 999;
+    }
+
+    .sidebar.active { right: 0; }
+
+    .sidebar a {
+      display: block;
+      margin-bottom: 16px;
+      color: #2f6b4f;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+      z-index: 998;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    header h1 { font-size: 20px; font-weight: 700; }
+    header .menu { font-size: 24px; cursor: pointer; }
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(218,180,98,.9)),
+    url("sasiramgan2.jpeg") center/cover no-repeat;
+  position: relative;
+  padding: 120px 80px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 68px;
+  font-weight: 800;
+  color: #ffd966;
+  line-height: 1.05;
+  max-width: 720px;
+  text-shadow: 0 6px 20px rgba(0,0,0,.4);
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero .sparkle {
+  position: absolute;
+  top: 180px;
+  left: 420px;
+  font-size: 26px;
+}
+
+.source {
+  position: fixed;
+  top: 100px;
+  right: 40px;
+  font-size: 13px;
+  color: #fff;
+  z-index: 10;
+}
+
+/* ===== QUOTE ===== */
+.quote {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  text-align: center;
+  font-size: 32px;
+  color: #a50d0d;
+  font-style: italic;
+}
+
+.source {
+  position: absolute;
+  top: 90px;
+  right: 40px;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* ===== ANIMASI ===== */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero h1 {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.quote {
+  animation: slideInFromRight 0.8s ease-out 0.2s backwards;
+}
+
+/* ===== ORNAMENT ===== */
+.ornament {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #9d1c1c 0 20px,
+    transparent 20px 40px
+  );
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+  .hero {
+    padding: 100px 24px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .quote {
+    bottom: 180px;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Filosofi</h1>
+  <div class ="menu" id = "menuBtn">☰</div>
+</header>
+<div class="sidebar" id="sidebar">
+  <a href="index.html">HOMEPAGE</a>
+  <a href="sejarah.html">SEJARAH SASIRANGAN</a>
+  <a href="filosofi.html">FILOSOFI</a>
+  <a href="irispudak.html">MOTIF 1</a>
+  <a href="bayamraja.html">MOTIF 2</a>
+  <a href="kembangkacang.html">MOTIF 3</a>
+  <a href="gigiharuan.html">MOTIF 4</a>
+  <a href="motif5.html">MOTIF 5</a>
+  <a href="motif6.html">MOTIF 6</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+
+<section class="hero">
+  <div class="source">Sumber gambar : Google image</div>
+
+  <h1>
+    Filosofi motif
+    <span>Sasirangan</span>
+  </h1>
+
+  <div class="sparkle">✦</div>
+
+  <div class="quote">
+    “Setiap motif sasirangan memiliki filosofi dan makna yang dalam,
+    mencerminkan kearifan lokal dan nilai-nilai kehidupan masyarakat Banjar”
+  </div>
+
+  <div class="ornament"></div>
+</section>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+
+  menuBtn.onclick = () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+  };
+
+  overlay.onclick = () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  };
+</script>
+
+
+</body>
+</html>
